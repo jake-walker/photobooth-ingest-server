@@ -26,7 +26,7 @@ app.post("/ingest", upload.single("photo"), (req, res, next) => {
   signale.info(`Attempting upload for job ${job}...`);
   
   // Wait until all of the uploads are complete.
-  Promise.all(promiseList).then((results) => {
+  Promise.all(serviceList).then((results) => {
     signale.success(`Uploads for job ${job} successful`);
     return res.json({
       ok: true
